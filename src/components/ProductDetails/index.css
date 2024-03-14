@@ -1,0 +1,40 @@
+.product-details-container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.img-container{
+    width: 95%;
+    padding: 20px;
+}
+
+.product-details-img{
+    width: 100%;
+}
+
+.product-details-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.product-details-content label{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.each-row-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.each-row-label{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}

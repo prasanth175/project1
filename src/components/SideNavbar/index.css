@@ -1,0 +1,138 @@
+.side-nav-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 300px;
+    width: 300px;
+    height: 100vh;
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #359DD9;
+    font-family: sans-serif;
+}
+
+.small-device-nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: #359DD9;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+
+@media screen and (max-width : 767px) {
+    .side-nav-bar-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width : 767px) {
+    .small-device-nav-bar {
+        display: none;
+    }
+}
+
+.navbar-toggle-button {
+    background-color: transparent;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    color: #fff;
+    font-size: 20px;
+}
+
+.small-device-website-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-small-device-heading {
+    color: #ffffff;
+    font-family: sans-serif;
+    margin-right: 5px;
+    font-size: 20px;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.small-device-nav-bar-container {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100vh;
+}
+
+.navbar-top-container {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #fff; */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.website-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-heading {
+    color: #ffffff;
+    font-family: sans-serif;
+    margin-left: 0px;
+}
+
+.navbar-items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin-top: 15px;
+    width: 100%;
+
+}
+
+.navbar-list-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 30px;
+}
+
+.navbar-list-item:not(:checked) {
+    border: transparent;
+}
+
+.navbar-list-item:checked {
+    border-left: 3px solid #fff;
+}
+
+@media (max-width: 767px) {
+    .navbar-items-list {
+        flex-wrap: wrap;
+    }
+}
+
+.navbar-items {
+    text-decoration: none;
+    text-align: none;
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.navbar-items {
+    font-size: 20px;
+    /* Default font size */
+}
+
+.navbar-item-icons {
+    margin-right: 12px;
+    width: 30px;
+}

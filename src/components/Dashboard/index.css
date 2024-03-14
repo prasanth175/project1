@@ -1,0 +1,115 @@
+.dashboard-container {
+    display: flex;
+}
+.dashboard-sub-container{
+   width: 100%;
+}
+.dash-bg-container{
+min-height: 100vh;
+    overflow-y: scroll;
+}
+.dashboard-heading{
+    font-family: sans-serif;
+    font-size: 24px;
+    width: 100%;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    padding-left: 35px;
+}
+.dashboard-cards{
+    padding: 0px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.card{
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-heading{
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+.total-count{
+    font-family: sans-serif;
+    font-size: 18px;
+    margin: 0px;
+}
+.card-1{
+    background-color: #DBEAFE;
+}
+.card-2{
+    background-color: #DCFCE7;
+}
+.card-3{
+    background-color: #FEF9C3;
+}
+.dashboard-heading-2 {
+    font-family: sans-serif;
+    font-size: 24px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 35px;
+}
+.products-management {
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+}
+
+.heading-and-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.products-managment-heading {
+    font-size: 24px;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.add-product-btn {
+    padding: 10px 20px;
+    background-color: #3B82F6;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #fff;
+    border-width: 0px;
+}
+
+.products-table {
+    border-collapse: collapse;
+    width: 85%;
+}
+
+.table-header {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table-header,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
