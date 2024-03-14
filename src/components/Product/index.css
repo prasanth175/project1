@@ -67,3 +67,10 @@
     flex-wrap: wrap;
     padding-left: 0;
 }
+
+.no-products-txt{
+    text-align: center;
+    color: grey;
+    font-size: 25px;
+    margin-top: 100px;
+}

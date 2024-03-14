@@ -6,11 +6,11 @@ import './index.css'
 
 const ProductItem = props => {
     const {item} = props
-    const {MobileName, Cost, Model, InStock, Manufacturer, ReleaseYear, id} = item
+    const {MobileName, Cost, Model, InStock, Manufacturer, ReleaseYear, id, image} = item
         return (
         <Link to={`/productdetails/${id}`} className="Link">
             <li className="product-item">
-              <img src={Img} alt="product" className="thumbnail"/>
+              <img src={image} alt="product" className="thumbnail"/>
               <h1 className="title">{MobileName}</h1>
               <p className="brand">by {Manufacturer}</p>
               <div className="product-details">

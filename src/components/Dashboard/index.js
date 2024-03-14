@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from 'react';
 import "./index.css"
 import SideNavbar from "../SideNavbar"
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -91,7 +92,7 @@ class Dashboard extends Component{
                     <div className="products-management">
                     <div className="heading-and-button-container">
                         <h1 className="products-managment-heading">Products Management</h1>
-                        <button className="add-product-btn">Add New Product</button>
+                        <Link to='/addproduct'><button className="add-product-btn">Add New Product</button></Link>
                     </div>
                    
                     <table className="products-table">

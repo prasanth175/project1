@@ -10,6 +10,12 @@ import AddProduct from './components/AddProduct';
 import Orders from './components/Orders';
 import ProductDetails from './components/ProductDetails';
 
+import Clothes from '../src/images/clothes.jpg';
+import Electronics from '../src/images/electronics.jpg';
+import Groceries from '../src/images/groceries.jpg';
+import Shoes from '../src/images/shoes.jpg';
+
+
 class App extends Component {
 
   state = {
@@ -21,7 +27,9 @@ class App extends Component {
           "Model": "A2643",
           "InStock": true,
           "Manufacturer": "Apple",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Electronics",
+          "image": Electronics
       },
       {
           "id": 2,
@@ -30,7 +38,10 @@ class App extends Component {
           "Model": "SM-G991U",
           "InStock": true,
           "Manufacturer": "Samsung",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id":3,
@@ -39,7 +50,10 @@ class App extends Component {
           "Model": "GD1YQ",
           "InStock": true,
           "Manufacturer": "Google",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 4,
@@ -48,7 +62,10 @@ class App extends Component {
           "Model": "LE2110",
           "InStock": false,
           "Manufacturer": "OnePlus",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Groceries",
+          "image": Groceries
+
       },
       {
           "id": 5,
@@ -57,7 +74,10 @@ class App extends Component {
           "Model": "M2102K1G",
           "InStock": true,
           "Manufacturer": "Xiaomi",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 6,
@@ -66,7 +86,10 @@ class App extends Component {
           "Model": "PREM-AN00",
           "InStock": false,
           "Manufacturer": "Huawei",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 7,
@@ -75,16 +98,22 @@ class App extends Component {
           "Model": "XQ-BC72",
           "InStock": true,
           "Manufacturer": "Sony",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 8,
-          "Mobile Name": "LG Velvet 2 Pro",
+          "MobileName": "LG Velvet 2 Pro",
           "Cost": "80000",
           "Model": "LM-V710EMW",
           "InStock": true,
           "Manufacturer": "LG",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 9,
@@ -93,7 +122,10 @@ class App extends Component {
           "Model": "XT2153-1",
           "InStock": true,
           "Manufacturer": "Motorola",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Clothes",
+          "image": Clothes
+
       },
       {
           "id": 10,
@@ -102,13 +134,22 @@ class App extends Component {
           "Model": "ZS673KS",
           "InStock": false,
           "Manufacturer": "ASUS",
-          "ReleaseYear": 2021
+          "ReleaseYear": 2021,
+          "Category": "Shoes",
+          "image": Shoes
       }
   ],
   }
 
-  addNewProduct = (mobileName,price,description,stackCount,model,manufacturedBy,releaseYear) => {
+  addNewProduct = (mobileName,price,description,stackCount,model,manufacturedBy,releaseYear,category) => {
+    console.log(manufacturedBy)
     const {productsList} = this.state
+    const categoryImageMap = {
+      groceries: Groceries,
+      clothes: Clothes,
+      shoes: Shoes,
+      electronics: Electronics
+  };
     const newProduct = {
           "id": productsList.length + 1,
           "MobileName": mobileName,
@@ -117,7 +158,9 @@ class App extends Component {
           "InStock": stackCount,
           "Manufacturer": manufacturedBy,
           "ReleaseYear": releaseYear,
-          "description": description}
+          "description": description,
+          "image": categoryImageMap[category.toLowerCase()]}
+          console.log(newProduct)
    this.setState(prevState => ({productsList: [...prevState.productsList, newProduct]}))
   }
 

@@ -1,15 +1,12 @@
 import React, { useContext } from 'react';
 import SideNavbar from '../SideNavbar';
-import Img from '../../images/8Ms3s1B.jpeg';
 import ProductContext from '../../context/ProductContext';
 import './index.css';
 import { useParams } from 'react-router-dom'; // Import useParams hook
 
 function ProductDetails() {
     const { productsList } = useContext(ProductContext);
-    console.log(productsList)
     const { id } = useParams(); // Access id from useParams hook
-    console.log(id)
 
     const productDetailsList = productsList.productsList.filter(product => (product.id == id));
     const productDetails = productDetailsList[0]
@@ -19,7 +16,7 @@ function ProductDetails() {
             <SideNavbar />
             <div className='product-details-container'>
                 <div className='img-container'>
-                    <img className='product-details-img' src={Img} alt='details' />
+                    <img className='product-details-img' src={productDetails.image} alt='details' />
                 </div>
 
                 <div className='product-details-content'>

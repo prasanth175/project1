@@ -16,19 +16,26 @@ const AddProduct = () => {
     stackCount: '',
     model: '',
     manufacturedBy: '',
-    releaseYear: ''
+    releaseYear: '',
+    Category: ''
   });
 
-  const { mobileName, price, description, stackCount, model, manufacturedBy, releaseYear } = formData;
+  const { Name,Price, Description, InStack, Model, manufacturedBy, ReleaseYear, Category } = formData;
 
   const handleChange = (e) => {
+    console.log(e.target.name)
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Assuming addNewProduct is an asynchronous function
-    await addNewProduct(mobileName, price, description, stackCount, model, manufacturedBy, releaseYear);
+    // const { mobileName, price, description, stackCount, model, manufacturedBy, releaseYear } = formData;
+    // console.log(formData)
+
+    console.log(formData)
+
+    await addNewProduct(Name,Price, Description, InStack, Model, manufacturedBy, ReleaseYear, Category);
     // Navigate to the products page after form submission
     history('/products');
   };
@@ -43,13 +50,13 @@ const AddProduct = () => {
             </div>
             <form className="sell-book-form" onSubmit={handleSubmit}>
               <label htmlFor="titleInput" className="sell-label">
-                Mobile Name: <span className="sell-star-txt">*</span>
+                Name: <span className="sell-star-txt">*</span>
               </label>
               <input
                 type="text"
                 id="authorInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='Name'
               />
               <label htmlFor="titleInput" className="sell-label">
                 Price: <span className="sell-star-txt">*</span>
@@ -58,8 +65,21 @@ const AddProduct = () => {
                 type="text"
                 id="authorInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='Price'
               />
+
+            <label htmlFor="titleInput" className="sell-label">
+                Category: <span className="sell-star-txt">*</span>
+              </label>
+              <select id="category" name="Category" className="sell-input" onChange={handleChange}>
+            <option value="">Select category</option>
+            <option value="groceries">Groceries</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothes">Clothes</option>
+            <option value="shoes">Shoes</option>
+          </select>
+
+
               <label htmlFor="descInput" className="sell-label">
                 Count in Stock: <span className="sell-star-txt">*</span>
               </label>
@@ -67,7 +87,7 @@ const AddProduct = () => {
                 type="text"
                 id="descInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='InStock'
               />
               <label
                 htmlFor="publicationInput"
@@ -80,7 +100,7 @@ const AddProduct = () => {
                 type="text"
                 id="publicationInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='Description'
               />
               <label htmlFor="isbnInput" className="sell-label">
               Manufactured By: <span className="sell-star-txt">*</span>
@@ -89,7 +109,7 @@ const AddProduct = () => {
                 type="text"
                 id="isbnInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='Manufacturer'
               />
               <label htmlFor="printedInput" className="sell-label">
                 Model: <span className="sell-star-txt">*</span>
@@ -98,7 +118,7 @@ const AddProduct = () => {
                 type="text"
                 id="printedInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='Model'
               />
               <label htmlFor="sellingInput" className="sell-label">
                 Release Year: <span className="sell-star-txt">*</span>
@@ -107,7 +127,7 @@ const AddProduct = () => {
                 type="text"
                 id="sellingInput"
                 className="sell-input"
-                onChange={handleChange}
+                onChange={handleChange} name='ReleaseYear'
               />
 
               {/* <label htmlFor="fileInput" className="sell-label">
